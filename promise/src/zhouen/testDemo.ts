@@ -11,16 +11,16 @@ myPromise.then(res => {
   return 2
 })
 // .then()
-// .then(res => {
-//   console.log('get res ', res)
-//   return 3
-// }).then(res => {
-//   console.log('get res ', res)
-//   return 4
-// }).then(res => {
-//   console.log('get res ', res)
-//   return 5
-// })
+.then((res: any) => {
+  console.log('get res ', res)
+  return new MyPromise((resolve => resolve(777777)))
+}, (x: any) => console.log(x)).then((res: any) => {
+  console.log('get res ', res)
+  return 4
+}).then((res: any) => {
+  console.log('get res ', res)
+  return 5
+})
 
 
 // const thenableTest = {
